@@ -644,7 +644,7 @@ const record = await pb.collection('posts').create({
 const records = await pb.collection('posts').getList(1, 20);
 ```
 
-## Docker
+## Docker and containerizing
 
 ### Containers
 Containers are isolated environments that package an application with everything it needs to run (code, runtime, libraries, settings). They're like lightweight virtual machines that share the host operating system but keep applications separate.
@@ -683,6 +683,56 @@ docker-compose down  # Stop all services
 
 ### Kubernetes
 We lightly touched on Kubernetes in this course to show what the next level of how container infrastructure is implemented.
+
+### Parts of a Kubernetes Cluster
+
+#### Node
+A server (physical or virtual) that runs containerized applications. There are two types: master/control plane nodes and worker nodes.
+
+#### Pod 
+The smallest deployable unit, typically a single container or a group of tightly coupled containers running on a node.
+
+#### Cluster
+A set of nodes managed together, running containerized workloads.
+
+#### Control Plane (Master)
+Manages the Kubernetes cluster. It makes global decisions (like scheduling) and responds to cluster events.
+
+##### kube-apiserver
+Frontend of the control plane that handles all API requests.
+
+##### etcd
+Consistent and highly available key-value store used for all cluster data.
+
+##### kube-scheduler 
+Assigns Pods to nodes based on resources and constraints.
+
+##### kube-controller-manager 
+Runs controllers to handle routine cluster functions (like creating pods, managing replication).
+
+#### Worker Node Components
+  ##### kubelet
+  Agent on each worker node that runs and manages containers as instructed by the control plane.
+
+  ##### kube-proxy
+  Manages network routing and load balancing for services on each node.
+
+  ##### Container Runtime
+  Software (like Docker or containerd) that runs containers on the node.
+
+#### Namespace
+Logical partition within a cluster, allows organizing resources for different teams or projects.
+
+#### Service
+Defines a stable network endpoint to access a group of pods, enabling load balancing and service discovery.
+
+#### Deployment
+Ensures a specified number of identical pods are always running, manages rolling updates.
+
+#### Ingress
+Manages external access to services, usually using HTTP, provides routing and load balancing.
+
+These components work together to deploy, scale, and manage containerized applications in production.
 
 ## NodeJS
 Node.js is a JavaScript runtime that allows you to run JavaScript on the server (outside the browser). It's built on Chrome's V8 JavaScript engine and enables building full-stack web applications using JavaScript for both frontend and backend.
