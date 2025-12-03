@@ -1,6 +1,9 @@
 # ISIT 300 Web Technologies Course Review
 We have covered a lot of topcis in this course, it would be easy to forget all of the details. This document is a review of concepts and topics covered in the course.
 
+## Goals
+Creating applications with the web in mind is a vast landscape. Entire businesses have come and gone to teach only fractions of it. The goal of this course was to provide the tour, largely sticking to core technologies. No transpiling, limited if any bundling, no front-end frameworks (React, VUE, Angular, etc.). The goal is to provide you with enough to take ideas and create homegrown services with specific, small scope needs. Need to track how many glasses of water you drank today? Easy... you can build it in no time and make it work just for you.
+
 ## HTML
 A tagged markup up language used to describe the document structure. This course covered the basics of what HTML is capable of and there is plenty more to explore. To keep learning more about HTML the MDN docs are an excellent source for seeing what is available. 
 
